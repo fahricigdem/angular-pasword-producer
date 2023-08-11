@@ -7,20 +7,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PasswordComponent implements OnInit {
   title = 'password';
-  password: string = 'Can';
+  password: string = '';
 
   constructor() {}
 
   ngOnInit(): void {}
 
   buttonClick() {
-    this.password = 'Can Boz';
-    console.log('Event Binding i öğreniyoruz');
-    console.log(this.isAlphabet);
-    console.log(this.isNumbers);
-    console.log(this.isSymbols);
+    this.password = '';
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    const numbers = '0123456789';
+    const symbols = '!$%&#^*';
+    let characterPool = '';
+    if (this.isAlphabet) {
+      characterPool = alphabet;
+    }
+    if (this.isNumbers) {
+      characterPool += numbers;
+    }
+    if (this.isSymbols) {
+      characterPool += symbols;
+    }
+    if (characterPool.length == 0) {
+      return;
+    }
+    for (let index = 0; index < this.length; index++) {
+      let randomCharIndex = Math.floor(Math.random() * characterPool.length);
+      this.password += characterPool[randomCharIndex];
+    }
   }
-
+  isButtonDisabled(): boolean {
+    return (
+      this.length == 0 || !(this.isAlphabet || this.isNumbers || this.isSymbols)
+    );
+  }
   getPassword() {
     return this.password;
   }
@@ -40,5 +60,15 @@ export class PasswordComponent implements OnInit {
   isSymbols: boolean = false;
   useSymbols() {
     this.isSymbols = !this.isSymbols;
+  }
+  length: number = 0;
+  changeLength(value: string) {
+    const parsedValue: number = parseInt(value);
+    debugger;
+    if (!isNaN(parsedValue)) {
+      this.length = parsedValue;
+    } else {
+      this.length = 0;
+    }
   }
 }
