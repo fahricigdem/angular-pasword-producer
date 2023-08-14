@@ -4,11 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PasswordComponent } from './password/password.component';
+import { CardsComponent } from './cards/cards.component';
+import { CardComponent } from './cards/card/card.component';
+import { LetterMatchingComponent } from './letter-matching/letter-matching.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PasswordComponent
+    PasswordComponent,
+    CardsComponent,
+    CardComponent,
+    LetterMatchingComponent
   ],
   imports: [
     BrowserModule,
