@@ -1,4 +1,20 @@
-<p>{{ randomText }} <button (click)="changeText()">changeText</button></p>
-<input (input)="handleInput($event.target.value)" #nameInputRef />{{
-  inputText
-}}
+<div style="text-align: center">
+  <h1 style="font-size: 30px">Letter-Matching</h1>
+  <h1 style="font-size: 24px">
+    <span
+      [class]="getClass(letter, inputText.split('')[i])"
+      *ngFor="let letter of randomText.split(''); let i = index"
+      >{{ letter }}</span
+    >
+    <button (click)="changeText()">changeText</button>
+  </h1>
+  <input
+    style="font-size: 24px"
+    (input)="handleInput($event.target.value)"
+    #nameInputRef
+    placeholder="Type the sentence above!"
+  />
+  <span> {{ inputText }}</span>
+
+  <p *ngIf="inputText === randomText" style="font-size: 28px">Bravo!</p>
+</div>

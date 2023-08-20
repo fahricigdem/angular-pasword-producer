@@ -1,3 +1,17 @@
+<div class="container">
+    <h1>Modules, Routing</h1>
+    <a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" routerLink="">Home</a> - 
+    <a routerLinkActive="active-link" routerLink="placeholders">Placeholders</a> - 
+    <a routerLinkActive="active-link" routerLink="tables">Tables</a>
+    <router-outlet></router-outlet>
+    <!-- <app-placeholder></app-placeholder> -->
+</div>
+
+<hr>
+<app-pages></app-pages>
+<hr />
+<app-pipes></app-pipes>
+<hr />
 <app-letter-matching></app-letter-matching>
 <hr />
 <app-cards></app-cards>

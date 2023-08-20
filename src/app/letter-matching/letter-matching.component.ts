@@ -9,6 +9,7 @@ import { faker } from '@faker-js/faker';
 export class LetterMatchingComponent implements OnInit {
   randomText = faker.lorem.sentence();
   inputText: string = '';
+  cssClass: string;
 
   @ViewChild('nameInputRef') nameInputRef: ElementRef;
 
@@ -24,5 +25,11 @@ export class LetterMatchingComponent implements OnInit {
 
   handleInput(value: string) {
     this.inputText = value;
+  }
+  getClass(randomLetter: string, inputLetter: string) {
+    if (inputLetter == undefined) {
+      return 'blue';
+    }
+    return randomLetter == inputLetter ? 'green' : 'red';
   }
 }

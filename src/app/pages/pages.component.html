@@ -1,0 +1,54 @@
+
+<div class="container text-center" appFirst [myVariable]="'#abc'">
+  <h1>Directives</h1>
+  <h4>ngClass, ng-container(2 structural directives), ngSwitch, custom directive (with Input)</h4>
+    <nav class="my-4">
+        <ul class="pagination justify-content-center">
+
+          <li class="page-item" 
+              [ngClass]="{disabled:activePage===0}" >
+                <a (click)="activePage=activePage-1" class="page-link" >Previous</a>
+          </li>
+          <ng-container *ngFor="let page of images; let i = index">
+            <li class="page-item" 
+            [ngClass]="{active:i==activePage}"  
+            *ngIf="activePage-i <5 && i-activePage<5">
+            <a (click)="activePage = i" class="page-link" >{{i+1}}</a>
+          </li>
+        </ng-container>
+
+          <li class="page-item"
+              [ngClass]="{disabled:activePage===images.length+1}">
+            <a (click)="activePage=activePage+1" class="page-link" >Next</a>
+          </li>
+
+        </ul>
+    </nav>
+    <div >
+      <img [src]="images[activePage].url" style="height: 40vh;">
+      <p>{{images[activePage].title}}</p>
+    </div>
+    <!-- <div *ngFor="let item of images; let i= index" >
+      <img [src]="item.url">
+      <p>{{item.title}}</p>
+    </div> -->
+    
+    <ng-container [ngSwitch]="activePage">
+      <p *ngSwitchCase="0">first</p>
+      <p *ngSwitchCase="1">second</p>
+      <p *ngSwitchDefault="">other</p>
+    </ng-container>
+
+</div>
+
+
+
+
+<!-- [ngClass]="i===activePage ? 'active':'passive'"  -->
+
+<!-- 
+
+Math.abs(activePage - i) < 5
+=>  |activePage-index| <5 
+
+-->
