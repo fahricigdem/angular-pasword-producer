@@ -32,8 +32,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    PlaceholdersModule,
-    TablesModule,
+    //PlaceholdersModule, // lazy loading yapildi
+    // TablesModule, // lazy loading yapildi
     AppRoutingModule,
   ],
   providers: [],

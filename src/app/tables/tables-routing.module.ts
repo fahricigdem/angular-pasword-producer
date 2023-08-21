@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
-  {path:"tables", component:TableComponent}
+  {path:"", component:TableComponent}
 ];
 
 @NgModule({

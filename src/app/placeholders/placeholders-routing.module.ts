@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
 
 const routes: Routes = [
-{path:"placeholders", component:PlaceholderComponent}
+{path:"", component:PlaceholderComponent}
 ];
 
 @NgModule({
