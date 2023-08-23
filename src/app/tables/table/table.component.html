@@ -1,1 +1,23 @@
-<p>table</p>
+<app-divider>
+    Tables
+</app-divider>
+
+<app-table-element></app-table-element>
+
+<app-divider>
+    Extra Infos
+</app-divider>
+<app-tabs>
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  routerLink="./" >Biography</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="partners">Partners</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="companies">Companies</a>
+      </li>
+</app-tabs>
+<div style="padding: 10px; border:solid 1px #ccc; border-width: 0px 1px 1px 1px;">
+    <router-outlet></router-outlet>
+</div>
