@@ -32,7 +32,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    //PlaceholdersModule, // lazy loading yapildi
+    // PlaceholdersModule, // lazy loading yapildi
     // TablesModule, // lazy loading yapildi
     AppRoutingModule,
   ],
