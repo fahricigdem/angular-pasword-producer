@@ -1,0 +1,11 @@
+<app-divider>
+    General Infos
+</app-divider>
+<div class="{{getClass()}}">
+
+    <div *ngFor="let element of data" class="p-4 text-center">
+        <div style="font-size: 32px;">{{element.value}}</div>
+        <div>{{element.label}}</div>
+    </div>
+    
+</div>

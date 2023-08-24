@@ -1,0 +1,8 @@
+<app-divider>
+    Modal
+</app-divider>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="togleModalShow()">
+    Launch demo modal
+  </button>
+<app-modal *ngIf="showModal" (close)="togleModalShow()"></app-modal>

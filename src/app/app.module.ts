@@ -11,8 +11,6 @@ import { PipesComponent } from './pipes/pipes/pipes.component';
 import { ConvertMilePipe } from './pipes/pipes/convert-mile.pipe';
 import { PagesComponent } from './pages/pages.component';
 import { FirstDirective } from './directives/first.directive';
-import { PlaceholdersModule } from './placeholders/placeholders.module';
-import { TablesModule } from './tables/tables.module';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';

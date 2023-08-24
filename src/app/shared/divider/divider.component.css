@@ -1,0 +1,9 @@
+:host:not(:first-of-type) {
+    display: block;
+    margin-top: 20px;
+}
+
+:host(:first-of-type) {
+    display: block;
+    margin-top: 40px;
+}
